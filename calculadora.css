@@ -1,0 +1,40 @@
+#imagen{
+	width: 500px;
+	height: 500px;
+}
+
+#pantalla{
+	text-align:right;
+	position: absolute;
+	width: 189px;
+	height: 70px;
+  	top:  82px; 
+  	left: 162px;
+	background-color:  	#FAFAD2;
+	border-radius: 9px;
+	font-size: 140%;
+}
+button{
+	width: 36px;
+	height: 26px;
+	border-radius: 50px 50px 140px 140px;
+	-moz-border-radius: 50px 50px 140px 140px;
+	-webkit-border-radius: 50px 50px 140px 140px;
+	font-size: 110%;
+}
+.nums{
+	position: absolute;
+	height: 70px;
+	left: 161px;
+
+}
+
+#nova{
+	background-color:black;
+	position:absolute;
+	top: 173px;
+	height: 165px;
+	width: 205px;
+	left:156px;
+	color:red;
+}
