@@ -1,4 +1,4 @@
-jQuery(document).ready(function() {
+$(document).ready(function() {
 
 	var ans = "";
 
@@ -12,29 +12,38 @@ jQuery(document).ready(function() {
     $('.tecla').click(function(){
 
     	var valor = $(this).text();
-    	
-    	if (valor == "AC"){
-    		limpiar();
-    		return;
-    	}
-    	else if (valor == "DEL"){
-    		$("#pantalla").val($("#pantalla").val().slice(0,$("#pantalla").val().length-1));
-    		return;
-    	}
-    	else if (valor == "ANS"){
-    		valor = ans;
-    	}
+
+        switch(valor){
+            case "=":
+                var pantalla = $('#pantalla').val();
+                try {
+                    var resultado = eval(pantalla);
+                    ans = resultado;           
+                }catch(err) {
+                    resultado = "--ERROR--";
+                }
+                $("#pantalla").val(resultado);
+                return;
+
+            case "AC":
+                limpiar();
+                return;
+    
+    	    case "DEL":
+                $("#pantalla").val($("#pantalla").val().slice(0,$("#pantalla").val().length-1));
+                return;
+
+            case "ANS":
+                valor = ans;
+                break;
+
+            case "*10^":
+                valor += "(";
+        }
 
     	$("#pantalla").val($("#pantalla").val() + valor);
    
     });
 
-
-    $('.igual').click(function(){
-    	var resultado = eval($('#pantalla').val());
-    	ans = resultado;
-    	$("#pantalla").val(resultado);
-    	console.log(resultado);
-    });
 
 });
